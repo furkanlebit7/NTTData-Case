@@ -6,8 +6,13 @@ export const EventSlice = createSlice({
   initialState: {
     data: [],
     status: "idle",
+    favorites: [],
   },
-  reducers: {},
+  reducers: {
+    addFavorite(state, action) {
+      state.favorites.push(action.payload);
+    },
+  },
   extraReducers: {
     //Fetch All Events
     [fetchProducts.pending]: (state) => {
@@ -26,3 +31,6 @@ export default EventSlice.reducer;
 
 //Selectors
 export const getAllProducts = (state) => state.product;
+
+//Actions
+export const { addFavorite } = EventSlice.actions;

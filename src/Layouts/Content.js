@@ -9,13 +9,26 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const Content = () => {
   const dispatch = useDispatch();
-  const products = useSelector(getAllProducts);
 
+  const [content, setContent] = useState(true); //True = All <----> False = Favorites
+  const [favorites, setFavorites] = useState([]);
   const [itemCount, setItemCount] = useState(4);
+  console.log("favorites", favorites);
+
+  const products = useSelector(getAllProducts);
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+
+  const toggleFavorites = (id) => {
+    if (favorites.includes(id)) {
+      const newList = favorites.filter((item) => item !== id);
+      setFavorites(newList);
+    } else {
+      setFavorites([...favorites, id]);
+    }
+  };
 
   return (
     <Container
@@ -49,23 +62,41 @@ const Content = () => {
                   fontSize: "16px",
                 }}
               >
-                0 ÜRÜN
+                {favorites.length} ÜRÜN
               </Typography>
             </Stack>
-            <Button
-              variant="contained"
-              size="small"
-              sx={{
-                textTransform: "none",
-                bgcolor: "ntt.main",
-              }}
-            >
-              Beğenilenler
-            </Button>
+            {content ? (
+              <Button
+                onClick={() => setContent(!content)}
+                variant="contained"
+                size="small"
+                sx={{
+                  textTransform: "none",
+                  bgcolor: "ntt.main",
+                }}
+              >
+                Beğenilenler
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setContent(!content)}
+                variant="outlined"
+                size="small"
+                sx={{
+                  textTransform: "none",
+                }}
+              >
+                Tüm Ürünler
+              </Button>
+            )}
           </Stack>
         </Stack>
       </Box>
-      <Products products={products} itemCount={itemCount} />
+      <Products
+        products={products}
+        itemCount={itemCount}
+        toggleFavorites={toggleFavorites}
+      />
       <Box textAlign={"center"}>
         {itemCount < products.data.length && (
           <Button

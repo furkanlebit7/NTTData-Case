@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Grid, IconButton } from "@mui/material";
-import exampleProduct from "../../Assets/Images/exampleProduct.png";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useDispatch } from "react-redux";
 
-const Product = () => {
+const Product = ({ product, toggleFavorites }) => {
+  const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    toggleFavorites(product.id);
+    setSelected(!selected);
+  };
+
   return (
     <Grid item xs={3}>
       <Card
         sx={{
           maxWidth: 345,
+          height: "100%",
           border: "1px solid",
           borderColor: "#E6E6E6",
         }}
@@ -20,28 +29,40 @@ const Product = () => {
         <CardActionArea
           sx={{
             p: "12px",
+            height: "100%",
           }}
         >
           <IconButton
+            onClick={() => {
+              handleClick();
+            }}
             aria-label="delete"
             sx={{
               position: "absolute",
               right: "20px",
               top: "20px",
               p: "4px",
-              color: "#d1d1d1",
+              color: selected ? "red" : "#00254F",
               backgroundColor: "#fff",
+              "&:hover": {
+                color: "red",
+                backgroundColor: "#fff",
+              },
             }}
           >
-            <FavoriteBorderIcon fontSize="small" />
+            {selected ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
           <CardMedia
             component="img"
             height="140"
-            image={exampleProduct}
+            image={product.imageUrl}
             alt="green iguana"
           />
-          <CardContent sx={{ p: "8px 0px" }}>
+          <CardContent
+            sx={{
+              p: "8px 0px",
+            }}
+          >
             <Typography
               gutterBottom
               variant="h5"
@@ -53,7 +74,7 @@ const Product = () => {
                 color: "#00254F",
               }}
             >
-              Product Name
+              {product?.name}
             </Typography>
             <Typography
               gutterBottom
@@ -67,7 +88,7 @@ const Product = () => {
                 color: "#00254F",
               }}
             >
-              1.299,00 TL
+              {product?.price} TL
             </Typography>
             <Typography
               gutterBottom
@@ -90,9 +111,7 @@ const Product = () => {
                 fontSize: "12px",
               }}
             >
-              Lorem ipsum dolor sit amet consectetur. Turpis dolor vulputate
-              velit id sit leo aliquet id at. Vel tellus tempus lacus tristique
-              nulla pretium erat duis.
+              {product?.description}
             </Typography>
             <Typography
               gutterBottom
@@ -104,7 +123,7 @@ const Product = () => {
                 fontSize: "10px",
               }}
             >
-              Ücretsiz - Aynı Gün Kargo
+              {product?.shippingMethod}
             </Typography>
           </CardContent>
         </CardActionArea>
