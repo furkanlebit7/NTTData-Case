@@ -7,13 +7,13 @@ import { CardActionArea, Grid, IconButton } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch } from "react-redux";
+import { toggleFavorites } from "../../Redux/Slices/FavoriteSlice";
 
-const Product = ({ product, toggleFavorites }) => {
-  const [selected, setSelected] = useState(false);
+const Product = ({ product, favorites }) => {
+  const dispatch = useDispatch();
 
   const handleClick = () => {
-    toggleFavorites(product.id);
-    setSelected(!selected);
+    dispatch(toggleFavorites(product.id));
   };
 
   return (
@@ -42,7 +42,7 @@ const Product = ({ product, toggleFavorites }) => {
               right: "20px",
               top: "20px",
               p: "4px",
-              color: selected ? "red" : "#00254F",
+              color: favorites.includes(product.id) ? "red" : "#00254F",
               backgroundColor: "#fff",
               "&:hover": {
                 color: "red",
@@ -50,7 +50,11 @@ const Product = ({ product, toggleFavorites }) => {
               },
             }}
           >
-            {selected ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+            {favorites.includes(product.id) ? (
+              <FavoriteIcon />
+            ) : (
+              <FavoriteBorderIcon />
+            )}
           </IconButton>
           <CardMedia
             component="img"

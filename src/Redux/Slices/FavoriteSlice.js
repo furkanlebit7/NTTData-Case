@@ -22,7 +22,7 @@ export const FavoriteSlice = createSlice({
 export default FavoriteSlice.reducer;
 
 //Selectors
-export const getFavorites = (state) => state.favorite;
+export const getFavorites = (state) => state.favorite.favorites;
 
 //Actions
 export const { toggleFavorites } = FavoriteSlice.actions;
