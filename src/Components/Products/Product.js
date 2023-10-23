@@ -49,6 +49,11 @@ const Product = ({ product, favorites }) => {
         }}
       >
         <CardActionArea
+          href={
+            product.id % 2 === 0
+              ? "https://www.linkedin.com/in/furkanlebit7/"
+              : "https://github.com/furkanlebit7"
+          }
           sx={{
             p: "12px",
             height: "100%",

@@ -1,71 +1,33 @@
-# Getting Started with Create React App
+# 🖥️ NTT DATA Frontend Developer Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Live Demo](https://furkanlebit7-dataguess-case.netlify.app/)
 
-## Available Scripts
+## :computer: Project Setup
 
-In the project directory, you can run:
+1. Clone the repository and install its features.
 
-### `npm start`
+```
+npm install or yarn install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Use the project locally (localhost).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+npm start or yarn start
+```
 
-### `npm test`
+## :fire: Technologies and Libraries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+:point_right: React.js <br />
+:point_right: React Hooks <br />
+:point_right: Redux <br />
+:point_right: Redux Toolkit <br />
+:point_right: Axios <br />
+:point_right: Tailwind CSS <br />
+:point_right: MaterialUI <br />
 
-### `npm run build`
+## 🖼️ Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# NTTData-Case" 
+![Ekran görüntüsü 2023-10-23 121625](https://github.com/furkanlebit7/NTTData-Case/assets/59422278/fd938174-6c7d-411e-bd9d-19f12a8011c0)
+![Ekran görüntüsü 2023-10-23 121653](https://github.com/furkanlebit7/NTTData-Case/assets/59422278/7f4b8185-8ac2-4ab1-82b6-f0b83416b3c3)
+![Ekran görüntüsü 2023-10-23 121722](https://github.com/furkanlebit7/NTTData-Case/assets/59422278/f2570234-1373-476d-bd3f-ab418329aebe)
