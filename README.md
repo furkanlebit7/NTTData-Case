@@ -1,6 +1,6 @@
 # 🖥️ NTT DATA Frontend Developer Assignment
 
-- [Live Demo](https://furkanlebit7-dataguess-case.netlify.app/)
+- [Live Demo](https://furkanlebit7-nttdata-case.netlify.app/)
 
 ## :computer: Project Setup
 
