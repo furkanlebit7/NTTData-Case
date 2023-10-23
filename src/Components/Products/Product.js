@@ -63,8 +63,10 @@ const Product = ({ product, favorites }) => {
           }}
         >
           <IconButton
-            onClick={() => {
+            onClick={(e) => {
               handleClick();
+
+              e.preventDefault();
             }}
             aria-label="delete"
             sx={{
