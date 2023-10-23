@@ -40,6 +40,7 @@ const Footer = () => {
                 mt: "24px",
                 fontSize: "16px",
                 fontWeight: "400",
+                display: { xs: "none", sm: "block" },
                 maxWidth: "410px",
               }}
             >
@@ -67,7 +68,13 @@ const Footer = () => {
               </Button>
             </Stack>
           </Box>
-          <Box sx={{ maxWidth: "488px", width: "100%" }}>
+          <Box
+            sx={{
+              maxWidth: "488px",
+              width: "100%",
+              display: { xs: "none", sm: "block" },
+            }}
+          >
             <Stack direction={"row"} justifyContent={"space-between"}>
               <Box>
                 <Grid item xs={12} md={6}>
@@ -155,7 +162,13 @@ const Footer = () => {
           <Typography variant="body2" sx={{ fontSize: "14px" }}>
             +3 9876 765 444
           </Typography>
-          <Stack direction={"row"} spacing={2}>
+          <Stack
+            direction={"row"}
+            spacing={2}
+            sx={{
+              display: { xs: "none", sm: "block" },
+            }}
+          >
             <InstagramIcon />
             <FacebookIcon />
             <LinkedInIcon />

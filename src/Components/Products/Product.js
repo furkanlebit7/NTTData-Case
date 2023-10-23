@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -16,8 +16,30 @@ const Product = ({ product, favorites }) => {
     dispatch(toggleFavorites(product.id));
   };
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <Grid item xs={3}>
+    <Grid
+      item
+      xs={windowWidth > 600 ? 3 : 12}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <Card
         sx={{
           maxWidth: 345,
@@ -30,6 +52,9 @@ const Product = ({ product, favorites }) => {
           sx={{
             p: "12px",
             height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
           }}
         >
           <IconButton
@@ -64,7 +89,11 @@ const Product = ({ product, favorites }) => {
           />
           <CardContent
             sx={{
+              flex: 1,
               p: "8px 0px",
+              display: "flex",
+              flexDirection: "column",
+              height: "100%",
             }}
           >
             <Typography
@@ -111,6 +140,11 @@ const Product = ({ product, favorites }) => {
               variant="body2"
               color="text.secondary"
               sx={{
+                display: "block",
+                textOverflow: "ellipsis",
+                wordWrap: { xs: "break-word", md: "normal" },
+                overflow: { xs: "hidden", md: "visible" },
+                maxHeight: { xs: "3.2em", md: "max-content" },
                 p: "4px 8px",
                 fontSize: "12px",
               }}

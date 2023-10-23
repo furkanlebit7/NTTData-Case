@@ -41,6 +41,7 @@ const Search = () => {
           size="small"
           sx={{
             width: "160px",
+            display: { xs: "none", sm: "inherit" },
           }}
         >
           <InputLabel id="demo-simple-select-label">Category</InputLabel>
@@ -51,11 +52,69 @@ const Search = () => {
             label="Category"
             onChange={(e) => handleChange(e)}
           >
-            <MenuItem value={10}>Data</MenuItem>
-            <MenuItem value={30}>Category Name 1</MenuItem>
-            <MenuItem value={40}>Category Name 2</MenuItem>
-            <MenuItem value={50}>Category Name 3</MenuItem>
-            <MenuItem value={60}>Category Name 4</MenuItem>
+            <MenuItem
+              value={10}
+              sx={{
+                bgcolor: "ntt.dark",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "ntt.main",
+                },
+                selected: {
+                  bgcolor: "orange",
+                },
+              }}
+            >
+              Data
+            </MenuItem>
+            <MenuItem
+              value={30}
+              sx={{
+                bgcolor: "ntt.dark",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "ntt.main",
+                },
+              }}
+            >
+              Category Name 1
+            </MenuItem>
+            <MenuItem
+              value={40}
+              sx={{
+                bgcolor: "ntt.dark",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "ntt.main",
+                },
+              }}
+            >
+              Category Name 2
+            </MenuItem>
+            <MenuItem
+              value={50}
+              sx={{
+                bgcolor: "ntt.dark",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "ntt.main",
+                },
+              }}
+            >
+              Category Name 3
+            </MenuItem>
+            <MenuItem
+              value={60}
+              sx={{
+                bgcolor: "ntt.dark",
+                color: "white",
+                "&:hover": {
+                  bgcolor: "ntt.main",
+                },
+              }}
+            >
+              Category Name 4
+            </MenuItem>
           </Select>
         </FormControl>
       </Stack>

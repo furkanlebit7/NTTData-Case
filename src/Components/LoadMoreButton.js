@@ -4,7 +4,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const LoadMoreButton = ({ itemCount, products, setItemCount, content }) => {
   return (
-    <Box textAlign={"center"}>
+    <Box textAlign={"center"} sx={{ display: { xs: "none", sm: "block" } }}>
       {itemCount < products.data.length && content && (
         <Button
           onClick={() => {

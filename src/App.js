@@ -4,6 +4,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Footer from "./Layouts/Footer";
+import Example from "./Components/Carousel";
 
 function App() {
   return (

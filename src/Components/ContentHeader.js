@@ -17,7 +17,7 @@ const ContentHeader = ({ content, setContent }) => {
           variant={"h4"}
           sx={{
             fontWeight: 500,
-            fontSize: "32px",
+            fontSize: { xs: "16px", sm: "24px", md: "32px" },
           }}
         >
           Content title goes here

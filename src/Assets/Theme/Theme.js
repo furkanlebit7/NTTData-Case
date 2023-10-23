@@ -7,6 +7,16 @@ const theme = createTheme({
       dark: "#00254F",
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      tablet: 768,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
 });
 
 export default theme;
